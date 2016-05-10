@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head><title></title>
+
+
+<script src="lib/jquery-2.2.3.js"></script>
+<script src="lib/bootstrap.min.js"></script>
+<script src="http://requirejs.org/docs/release/2.2.0/comments/require.js"  data-main="scripts/main"></script>
+
+<link rel="stylesheet" type="text/css" href="style/index.css"></link>
+<link rel="stylesheet" type="text/css" href="style/bootstrap.css"></link>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+</head>
+<body>
+<div class="container-fluid" style="padding: 0px;">
+	<div class="col-xs-0 col-sm-0 col-md-2  sidebar" style="position: fixed" ng-include="'sidebar.html'">
+	</div>
+	<div class="col-xs-12 col-sm-12 col-md-10 col-md-offset-2 panel" style="height: 100%">
+	<div ui-view></div>
+		
+	</div>
+</div>
+
+</body>
+</html>
