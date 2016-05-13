@@ -1,9 +1,9 @@
 requirejs.config({
-    baseUrl: 'lib/',
+    baseUrl: '',
     paths: {
-       "angular": "angular",
-	   "uiRouter": "angular-ui-router",
-	   "sidebar": "../scripts/sideBarController"
+       "angular": "lib/angular",
+	   "uiRouter": "lib/angular-ui-router",
+	   "sidebar": "scripts/sideBarController",
     },
 	shim: {
         'angular': {
@@ -11,6 +11,11 @@ requirejs.config({
         },
 		"uiRouter": ["angular"],
     },
+	map:{
+		'*':{
+			'css': 'lib/css'
+		}
+	}
 });
 
 require(['angular','sidebar', 'uiRouter'], function(angular, sidebar){
@@ -29,7 +34,8 @@ require(['angular','sidebar', 'uiRouter'], function(angular, sidebar){
 		$stateProvider.state('sns', generateConfig('sns')).state('home', generateConfig('home'))
 		.state('blogs', generateConfig('blogs'))
 		.state('journal', generateConfig('journal'))
-		.state('github', generateConfig('github'));
+		.state('github', generateConfig('github'))
+		.state('cv', generateConfig('cv'));
 	
     };
     
