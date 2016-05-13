@@ -89,7 +89,7 @@ define([], function(){
 		while(this.g2048[parseInt(r1/4)][r1%4]!==0){
 			r1=parseInt(Math.random()*100%16);
 		}
-		this.g2048[parseInt(r1/4)][r1%4]=Math.random()<0.2?2:4;
+		this.g2048[parseInt(r1/4)][r1%4]=Math.random()>=0.2?2:4;
 		if(!this.movable()){
 			this.lose();
 		}
