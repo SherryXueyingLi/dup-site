@@ -60,7 +60,7 @@ require(['angular','sidebar', 'uiRouter'], function(angular, sidebar){
     
     function load(name){
 		var deferred = $.Deferred();
-		require(['../scripts/'+name+'/'+name], function(ctrl){
+		require(['scripts/'+name+'/'+name], function(ctrl){
 			angular.module("explorUni").cp.register(name, ctrl);
 			cache[name] = name;
 			deferred.resolve(name);
