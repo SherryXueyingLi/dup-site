@@ -19,8 +19,6 @@ define([], function(){
 		   }else{
 				game.lose();
 		   }
-		   
-		   game.create();
 		   scope.$apply();
 		}
 	};
