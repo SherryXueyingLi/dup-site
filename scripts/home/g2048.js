@@ -1,5 +1,6 @@
 define([], function(){
 	var up=38, left=37, down=40, right=39;//key code
+	var moved = false;
 	var G2048 = function(scope){
 		this.scope = scope;
 		this.best = 0;
@@ -8,6 +9,7 @@ define([], function(){
 		var game=this;
 		window.onkeyup = function(e) {
 		   var key = e.keyCode ? e.keyCode : e.which;
+		   moved = false;
 		   switch(key){
 		   case up: game.up();break;
 		   case left: game.left(); break;
@@ -15,7 +17,7 @@ define([], function(){
 		   case right: game.right(); break;
 		   }
 		   if(game.movable()){
-				game.create();
+				moved && game.create();
 		   }else{
 				game.lose();
 		   }
@@ -89,7 +91,7 @@ define([], function(){
 		while(this.g2048[parseInt(r1/4)][r1%4]!==0){
 			r1=parseInt(Math.random()*100%16);
 		}
-		this.g2048[parseInt(r1/4)][r1%4]=Math.random()<0.2?2:4;
+		this.g2048[parseInt(r1/4)][r1%4]=Math.random()>=0.2?2:4;
 		if(!this.movable()){
 			this.lose();
 		}
@@ -132,11 +134,11 @@ define([], function(){
 	var mergeRight = function(array){
 		var nei = findMinNeibor(array);
 		var score=0;
-		while(nei!==null){
+		if(nei!==null){
 			array[nei[1]] = array[nei[0]]+array[nei[1]];
 			score+=array[nei[1]];
 			array[nei[0]] = 0;
-			nei = findMinNeibor(array);
+			moved = true;
 		}
 		collapse(array);
 		return score;
@@ -162,8 +164,11 @@ define([], function(){
 				while(j>0 && array[j]===0){
 					j--;
 				}
-				array[i] = array[j];
-				array[j] = 0;
+				if(j>=0 && array[j]!=0){
+					array[i] = array[j];
+					array[j] = 0;
+					moved = true;
+				}
 			}
 		}
 	}
