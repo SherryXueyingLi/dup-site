@@ -1,12 +1,11 @@
 <div class="row" style="padding-top: 30px;">
-		<div class=" col-xs-12 col-sm-12 col-md-6"  align="center">Your score: {{g2048.score}}</div>
-		<div class=" col-xs-12 col-sm-12 col-md-6"  align="center">Your best: {{g2048.best}}</div>
+		<div class=" col-xs-12 col-sm-12 col-md-4 col-md-offset-2"  align="center">Your score: {{g2048.score}}</div>
+		<div class=" col-xs-12 col-sm-12 col-md-4"  align="center">Your best: {{g2048.best}}</div>
 		
-		<div class="col-lg-12" style="padding: 10px;">
+		<div class="col-md-8 col-md-offset-2" style="padding: 10px;">
 			<button ng-click='reset2048()' class="btn btn-default btn-sm" style="float:right">New Game</button>
 		</div>
-		<div class="col-lg-12" align="center">
-				
+		<div class="col-md-8 col-md-offset-2" align="center">				
 				<table class="g2048">
 					<tr ng-repeat="cols in g2048.g2048 track by $index">
 						<td align="center" ng-repeat="col in cols track by $index" ng-class="'gLevel'+col">{{col>0?col:''}}</td>

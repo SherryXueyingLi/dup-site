@@ -1,5 +1,6 @@
 .cvboard{
-	background-color: #B9C0EF;
+	background-color: #313A77;
+	color: white;
 }
 
 .cvboard .strong{
@@ -19,8 +20,8 @@
 	padding: 15px 0px 15px 0px;
 }
 .pic{
-	width: 300px;
-	height: 300px;
+	width: 200px;
+	height: 200px;
 	border-radius: 150px;
     background-color: transparent;
 }
