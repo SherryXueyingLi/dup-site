@@ -1,8 +1,5 @@
 .cvboard{
-	padding: 25px;
-	background-color: white;
-	box-shadow: 1px 1px 3px gray;
-	margin: 10px;
+	background-color: #B9C0EF;
 }
 
 .cvboard .strong{
@@ -13,7 +10,6 @@
 	display: block;
 	font-weight: bold;
 	padding: 5px;
-	color: darkgrey;
 	
 }
 .cv-experience{
@@ -23,9 +19,8 @@
 	padding: 15px 0px 15px 0px;
 }
 .pic{
-	width: 120px;
-	height: 120px;
-	border-radius: 75px;
-	border: solid 6px #ECECEB;
-    background-color: white;
+	width: 300px;
+	height: 300px;
+	border-radius: 150px;
+    background-color: transparent;
 }

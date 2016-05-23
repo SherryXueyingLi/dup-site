@@ -2,44 +2,41 @@ body{
 	margin: 0px;
 	padding: 0px;
 	height: 100%;
-	background-color: #e4e5e6!important;
 }
-div.sidebar{
-	height: 100%;
-	padding: 0px;
-	overflow:hidden;
-}
-
-div.panel{
-	
-	height: 100%;
-}
-
-.control-menu{
+div.navBar{
+	height: 50px;
+	width: 100%;
 	padding: 0px;
 }
-.menu-cate{
-	font-weight:bold;
+
+.navbar-dup{
+	background-color: #3F51B5;
+	border: 0px;
+	border-radius: 0px!important;
 }
-.control-menu>li{
-	list-style-type: none;
-	padding: 5px 10px 5px 10px;
+.navbar-dup a{
+	color: white;
+}
+.navbar-dup li>a{
+	border-bottom: solid transparent 3px;
+	background-color: transparent!important;
+	border-color: transparent!important;
+}
+.navbar-dup li>a:focus{
+	background-color: transparent;
+}
+.navbar-dup li>a:hover{
+	border-bottom: solid white 3px;
+	background-color: transparent;
 }
 
-.panelBody{
-	padding: 40px 20px 10px 40px;
-}
-
-.block{
-	background-color:white;
-	border-radius: 3px;
-	box-shadow: 1px 1px 3px gray;
-	min-height: 200px;
+.navbar-dup .icon-bar{
+	border: solid white 1px;
 }
 
 .g2048 td{
-	width: 65px;
-	height: 65px;
+	width: 80px;
+	height: 80px;
 	border: solid 5px #C3C2B8;
 	font-size: 1.2em;
 	font-weight: bold;

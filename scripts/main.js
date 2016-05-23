@@ -32,6 +32,7 @@ require(['angular','sidebar', 'uiRouter'], function(angular, sidebar){
     var cache={}; 
     var setStates = function($stateProvider){
 		$stateProvider.state('sns', generateConfig('sns')).state('home', generateConfig('home'))
+        .state('g2048', generateConfig('g2048'))
 		.state('blogs', generateConfig('blogs'))
 		.state('journal', generateConfig('journal'))
 		.state('github', generateConfig('github'))
