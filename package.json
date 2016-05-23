@@ -1,0 +1,12 @@
+{
+	"name":"dup-site",
+	"version": "0.1",
+	"licence": "MIT",
+	"author":{
+		"name" : "Sherry Li",
+		"email" : "SherryXueying.Li@aliyun.com"
+	},
+    "dependencies": {
+        "express" : "^4.13.4"
+    }
+}

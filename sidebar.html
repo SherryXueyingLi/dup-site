@@ -1,17 +1,32 @@
 <div align="center" style="height: 100%" ng-controller="sideBar">
-<div style="height: 20%; padding: 50px;" align="center">
-<img src="https://github.com/fluidicon.png" style="height:100px; width: 100px; border-radius: 15px;"/>
-</div>
-<ul class="control-menu">
-	<li class="menu-cate">Dash Board</li>
-	<li><a ui-sref="home">Home</a></li>
-	<li class="menu-cate">Social Life</li>
-	<li><a ui-sref="sns">SNS</a></li>
-	<li class="menu-cate">Personal</li>
-	<li><a ui-sref="cv">CV</a></li>
-	<li><a ui-sref="blogs">Blogs</a></li>
-	<li><a ui-sref="journal">Journal</a></li>
-	<li class="menu-cate">Technical</li>
-	<li><a ui-sref="github">Github</a></li>
-</ul>
+<nav class="navbar navbar-dup" style="z-index: 999">
+  
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#dup-site-nav" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Hey</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="dup-site-nav">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a ui-sref="home">Home</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Games<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a ui-sref="g2048">2048</a></li>
+          </ul> 
+        </li>
+		<li><a ui-sref="sns">SNS</a></li>
+        <li><a ui-sref="cv">CV</a></li>
+		<li><a ui-sref="github">Github</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  
+</nav>
 </div>
