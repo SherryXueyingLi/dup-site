@@ -4,12 +4,16 @@ requirejs.config({
        "angular": "lib/angular",
 	   "uiRouter": "lib/angular-ui-router",
 	   "sidebar": "scripts/sideBarController",
+       "particles": "lib/particles.min"
     },
 	shim: {
         'angular': {
             exports: 'angular'
         },
 		"uiRouter": ["angular"],
+        "particles": {
+            exports: 'particlesJS'
+        }
     },
 	map:{
 		'*':{
