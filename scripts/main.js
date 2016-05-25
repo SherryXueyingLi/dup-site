@@ -4,7 +4,9 @@ requirejs.config({
        "angular": "lib/angular",
 	   "uiRouter": "lib/angular-ui-router",
 	   "sidebar": "scripts/sideBarController",
-       "particles": "lib/particles.min"
+       "particles": "lib/particles.min",
+       "react": "lib/react.min",
+       "react-dom": "lib/react-dom.min"
     },
 	shim: {
         'angular': {

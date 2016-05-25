@@ -34,52 +34,6 @@ div.navBar{
 	border: solid white 1px;
 }
 
-.g2048 td{
-	width: 100px;
-	height: 100px;
-	border: solid 5px #C3C2B8;
-	font-size: 1.2em;
-	font-weight: bold;
-}
-
-
-td.gLevel2{
-	background-color: #F1EAD6;
-}
-td.gLevel4{
-	background-color: #EDE4D0;
-}
-td.gLevel8{
-	background-color: #EADDC0;
-}
-td.gLevel16{
-	background-color: #F1DBAC;
-}
-td.gLevel32{
-	background-color: #F3D18A;
-}
-td.gLevel64{
-	background-color: #F9CD71;
-}
-td.gLevel128{
-	background-color: #F9C14C;
-}
-
-td.gLevel256{
-	background-color: #F5B632;
-}
-td.gLevel512{
-	background-color: #F9C14C;
-}
-td.gLevel1024{
-	background-color: #E4A90D;
-}
-td.gLevel2048{
-	background-color: #D29C0D;
-}
-td.gLevel4096{
-	background-color: #BB8408;
-}
 
 .animated {
   -webkit-animation-duration: 1s;

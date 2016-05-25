@@ -1,4 +1,4 @@
-define(["../g2048/2048"], function(G2048){
+define(["../g2048/2048", "css!../g2048/g2048"], function(G2048){
     var ctl = function($scope){
 		$scope.score = 0;
 		$scope.best = 0;
