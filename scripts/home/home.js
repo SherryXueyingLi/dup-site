@@ -18,17 +18,17 @@ define(["css!../home/home"], function(){
 				if(slides[i].classList.contains("current")){
 					slides[i].classList.remove("current");
 					document.getElementsByClassName("home-nav")[0].children[i].classList.remove("active");
-					slides[directive(i, slides.length)].classList.add("current");
+					slides[directive(i, slides.length-1)].classList.add("current");
 					var navs = document.getElementsByClassName("home-nav")[0].children;
-					navs[directive(i, navs.length)].classList.add("active");
-					fixNavColor(directive(i, slides.length));
+					navs[directive(i, navs.length-1)].classList.add("active");
+					fixNavColor(directive(i, slides.length-1));
 					break;
 				}
 			}
 		};
 		
 		const fixNavColor = (i) => {
-			var navMap = ["#242543", "#509FCC","",""];			
+			var navMap = ["#242543", "#509FCC","#1E2835",""];			
 			document.getElementById("nav-dup").style.backgroundColor=navMap[i];
 		};
 		

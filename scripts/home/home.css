@@ -39,6 +39,7 @@
 .productive-content{
     padding-top: 2%; 
     display: inline-block;
+    height: 40%;
 }
 .productive-content li{
     display: inline-block;
@@ -47,8 +48,13 @@
 }
 .productive-content li img{
    border-radius:100%; 
-   width: 50%; 
-   padding: 3%
+   width: 40%; 
+   margin-bottom: 5px;
+}
+
+.productive-content li img:hover{
+   box-shadow: 0px 0px 10px gray;
+  
 }
 .productive-content li p{
    font-size: 1.3em;
@@ -57,4 +63,17 @@
     width: 100%; 
     font-size: 3em; 
     font-weight: lighter;
+}
+
+.hungry-content li{
+    display: inline-block;
+    list-style: none;
+    width: 25%;
+}
+
+.hungry-content li img{
+   height:100px; 
+   margin-bottom: 5px;
+   padding: 7px;
+   border-radius: 2%;
 }
