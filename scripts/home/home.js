@@ -37,11 +37,11 @@ define(["css!../home/home"], function(){
 			
 			document.getElementsByClassName("home-slides-show")[toPageNum].classList.add("current");
 			document.getElementsByClassName("home-nav")[0].children[toPageNum].classList.add("active");
-			
+			fixNavColor(toPageNum);
 		};
 		
 		const fixNavColor = (i) => {
-			var navMap = ["#242543", "#509FCC","#1E2835",""];			
+			var navMap = ["#242543", "#509FCC","#1E2835","#3FA6B5"];			
 			document.getElementById("nav-dup").style.backgroundColor=navMap[i];
 		};
 		
