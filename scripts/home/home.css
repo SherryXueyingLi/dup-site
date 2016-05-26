@@ -89,7 +89,7 @@
 #home-read img{
     display: inline-block;
     position: absolute;
-    transition : all 1000ms ease-out; 
+    transition : all 700ms ease-out; 
 }
 #home-read.begin img{
    top: 100%!important;
