@@ -10,8 +10,8 @@
 </div>
 <div class="home-container" style="transform: translate3d(0px, -0px, 0px);">
 <div class="home-slides-show current" style="background-color: #20213B; background-image: url(src/skyline1.svg); color: white;">
-    <div class="poster-title" style=" color: #E89F51">Be a Better Front-end Developer</div>
-	<section style="width: 60%; display: inline-block;">
+    <div class="poster-title" style=" color: #E89F51; opacity: 0;">Be a Better Front-end Developer</div>
+	<section style="width: 60%; display: inline-block; opacity: 0;" class="">
         <h1 style="padding-top: 10%">Plan Your Projects</h1> 
         <ul style="padding-top: 2%; font-size: 1.2em;">
         <li>Stay organised</li>
@@ -20,7 +20,7 @@
         <li>Keep stakeholders in the loop.</li>
         </ul>
     </section>
-    <img src="src/plan.jpg"  style="border-radius:100%; width: 34%; padding: 3%"> 
+    <img src="src/plan.jpg"  style="border-radius:100%; width: 34%; padding: 3%;opacity: 0;" class=""> 
 </div>
 <div class="home-slides-show" style="">
 	<div class="poster-title" id="to-animate-wobble" align="center" style="opacity: 0;">Be <span style="font-size: 1.2em; color: orange;">P</span>ro<span style="color: #509FCC">a</span>ctive</div>
@@ -41,13 +41,16 @@
      </div>
 </div>
 <div class="home-slides-show" style="background-color:#273547; color: white;">
-	<h1 class="poster-title">Stay Hungry</h1><span style="color: darkgray;">Taste, and engjoy the meal, don't swallow.</span>
-    <ul class="hungry-content" align="center">
+	<section style="transform: translate3d(-100%, 0, 0);" class="">
+        <h1 class="poster-title">Stay Hungry</h1>
+        <span style="color: darkgray;">Taste, and engjoy the meal, don't swallow.</span>
+    </section>
+    <ul class="hungry-content" align="center" style="opacity: 0;">
         <li><img src="src/nodejs.png"></li>
         <li><img src="src/angular.png"></li>
         <li><img src="src/react.svg"></li>
      </ul>
-     <p style="color: gray; float: right">There's A LOT More...</p>
+     <p style="color: gray; float: right; transform: translate3d(300%, 0, 0);" class="">There's A LOT More...</p>
 </div>
 <div class="home-slides-show begin" id="home-read">	
     <img src="src/MacBook.svg" width="450" style="display: inline-block;transform: rotate(-45deg); left: 8%;top: 12%;"></img>

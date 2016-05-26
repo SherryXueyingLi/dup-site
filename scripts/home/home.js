@@ -36,7 +36,7 @@ define(["css!../home/home"], function(){
 			
 			document.getElementsByClassName("home-slides-show")[toPageNum].classList.add("current");
 			document.getElementsByClassName("home-nav")[0].children[toPageNum].classList.add("active");
-			setTimeout( ()=>{pageAnimate(toPageNum)}, 700);
+			setTimeout( ()=>{pageAnimate(toPageNum)}, 400);
 			fixNavColor(toPageNum);
 		};
 		const pageAnimate = (num)=>{
@@ -54,6 +54,26 @@ define(["css!../home/home"], function(){
 				document.getElementById("to-animate-wobble").classList.remove("animated", "fadeInDown");
 				document.getElementById("productive-content").classList.remove("animated","fadeInUp");
 				document.getElementById("proactive-footer").style.opacity = "0";
+			}
+			if(num === 2){
+				document.getElementsByClassName("home-slides-show")[num].children[1].classList.add("animated","zoomIn");
+				setTimeout(()=>{
+					document.getElementsByClassName("home-slides-show")[num].children[0].classList.add("animated","slideInLeft");
+					document.getElementsByClassName("home-slides-show")[num].children[2].classList.add("animated","slideInRight");
+				},400);
+			}else{
+				document.getElementsByClassName("home-slides-show")[2].children[1].classList.remove("animated","zoomIn");
+				document.getElementsByClassName("home-slides-show")[2].children[0].classList.remove("animated","slideInLeft");
+				document.getElementsByClassName("home-slides-show")[2].children[2].classList.remove("animated","slideInRight");
+			}
+			if(num===0){
+				document.getElementsByClassName("home-slides-show")[num].children[0].classList.add("animated","fadeInLeft");
+				document.getElementsByClassName("home-slides-show")[num].children[1].classList.add("animated","fadeInRight");
+				document.getElementsByClassName("home-slides-show")[num].children[2].classList.add("animated","fadeIn");
+			}else{
+				document.getElementsByClassName("home-slides-show")[0].children[0].classList.remove("animated","fadeInLeft");
+				document.getElementsByClassName("home-slides-show")[0].children[1].classList.remove("animated","fadeInRight");
+				document.getElementsByClassName("home-slides-show")[0].children[2].classList.remove("animated","fadeIn");
 			}
 		};
 		const fixNavColor = (i) => {
