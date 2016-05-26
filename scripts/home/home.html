@@ -23,8 +23,8 @@
     <img src="src/plan.jpg"  style="border-radius:100%; width: 34%; padding: 3%"> 
 </div>
 <div class="home-slides-show" style="">
-	<div class="poster-title" align="center">Be <span style="font-size: 1.2em; color: orange;">P</span>ro<span style="color: #509FCC">a</span>ctive</div>
-    <ul class="productive-content" align="center">
+	<div class="poster-title" id="to-animate-wobble" align="center" style="opacity: 0;">Be <span style="font-size: 1.2em; color: orange;">P</span>ro<span style="color: #509FCC">a</span>ctive</div>
+    <ul id="productive-content" align="center" style="opacity: 0;" class="">
         <li><img src="src/professional.png">
             <p>To be <strong>more professional</strong></p>
         </li>
@@ -35,8 +35,10 @@
             <p>It builds <strong>trust</strong></p>
         </li>
     </ul>
-    <img src="src/productive.svg" class="bg-canves" style="position: relative; left: 60%; height:350px;">
-    <div  class="bg-canves" style="width:200%; height: 50px; position: relative; left: -50%; background-color: #FA7032;"></div>
+    <div id="proactive-footer" style="opacity: 0;transition : all 700ms ease-out; ">
+        <img src="src/productive.svg" style="position: absolute; left: 60%; bottom: 2%; height:350px; z-index: -1;">
+        <div  style="width:200%; bottom: 0%; height: 2%; position: absolute;  left: -50%; background-color: #FA7032; z-index: -1;"></div>
+     </div>
 </div>
 <div class="home-slides-show" style="background-color:#273547; color: white;">
 	<h1 class="poster-title">Stay Hungry</h1><span style="color: darkgray;">Taste, and engjoy the meal, don't swallow.</span>
@@ -47,9 +49,8 @@
      </ul>
      <p style="color: gray; float: right">There's A LOT More...</p>
 </div>
-<div class="home-slides-show" id="home-read">
-	
-    <img src="src/MacBook.svg" width="450" style="display: inline-block;transform: rotate(-45deg); left: 3%"></img>
+<div class="home-slides-show begin" id="home-read">	
+    <img src="src/MacBook.svg" width="450" style="display: inline-block;transform: rotate(-45deg); left: 8%;top: 12%;"></img>
     <img src="src/coffee.svg" width="400" style="left: 32%; top: 3%;"></img>
     <img src="src/glasses.svg" width="500" style="left: 45%; top: 2%; transform: rotate(15deg);"></img>
     <img src="src/headphone.svg" width="500" style="left: 60%; top: 6%; transform: rotate(-15deg);"></img>

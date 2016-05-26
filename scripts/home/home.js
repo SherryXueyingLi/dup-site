@@ -30,16 +30,32 @@ define(["css!../home/home"], function(){
 			var currIndex = fromPage || getCurrentIndex();
 			var toY = (window.innerHeight-50) * toPageNum;
 			document.getElementsByClassName("home-container")[0].style.transform = "translate3d(0px, -"+toY+"px, 0px)";
-			document.getElementsByClassName("home-container")[0].style.transition="all 700ms ease";
 			
 			document.getElementsByClassName("home-slides-show current")[0].classList.remove("current");
 			document.getElementsByClassName("home-nav")[0].getElementsByClassName("active")[0].classList.remove("active");
 			
 			document.getElementsByClassName("home-slides-show")[toPageNum].classList.add("current");
 			document.getElementsByClassName("home-nav")[0].children[toPageNum].classList.add("active");
+			setTimeout( ()=>{pageAnimate(toPageNum)}, 700);
 			fixNavColor(toPageNum);
 		};
-		
+		const pageAnimate = (num)=>{
+			
+			if(num === 3){
+				document.getElementsByClassName("home-slides-show")[num].classList.remove("begin");
+			}else{
+				document.getElementsByClassName("home-slides-show")[3].classList.add("begin");
+			}
+			if(num===1){
+				document.getElementById("to-animate-wobble").classList.add("animated","fadeInDown");
+				document.getElementById("productive-content").classList.add("animated","fadeInUp");
+				document.getElementById("proactive-footer").style.opacity = "1";
+			}else{
+				document.getElementById("to-animate-wobble").classList.remove("animated", "fadeInDown");
+				document.getElementById("productive-content").classList.remove("animated","fadeInUp");
+				document.getElementById("proactive-footer").style.opacity = "0";
+			}
+		};
 		const fixNavColor = (i) => {
 			var navMap = ["#242543", "#509FCC","#1E2835","#3FA6B5"];			
 			document.getElementById("nav-dup").style.backgroundColor=navMap[i];
