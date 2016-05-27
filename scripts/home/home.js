@@ -1,12 +1,9 @@
 define(["css!../home/home"], function(){
 	var ctl = function($scope, $element){
 		
-		$scope.secondPage = function(){
-			
-		};
 		document.body.style.overflow="hidden";
-		var nowActive = 0;
-		var resize = function(){
+		
+		let resize = function(){
 			var slides = document.getElementsByClassName("home-slides-show");
 			for(var i=0; i<slides.length; i++){
 				slides[i].style.height = window.innerHeight-50+"px";
@@ -26,7 +23,7 @@ define(["css!../home/home"], function(){
 			return  Array.prototype.indexOf.call(document.getElementsByClassName("home-slides-show"), document.getElementsByClassName("home-slides-show current")[0]);
 		};
 		
-		var jumToPage = (toPageNum, fromPage) => {
+		const jumToPage = (toPageNum, fromPage) => {
 			var currIndex = fromPage || getCurrentIndex();
 			var toY = (window.innerHeight-50) * toPageNum;
 			document.getElementsByClassName("home-container")[0].style.transform = "translate3d(0px, -"+toY+"px, 0px)";
@@ -77,7 +74,7 @@ define(["css!../home/home"], function(){
 			}
 		};
 		const fixNavColor = (i) => {
-			var navMap = ["#242543", "#509FCC","#1E2835","#3FA6B5"];			
+			var navMap = ["#242543", "#509FCC","#1E2835","#3FA6B5","#90c9e8"];			
 			document.getElementById("nav-dup").style.backgroundColor=navMap[i];
 		};
 		
@@ -104,6 +101,9 @@ define(["css!../home/home"], function(){
 		
 		resize();
 		fixNavColor(0);
+		
+		$scope.jumToPage = jumToPage;
+		
 		$scope.$on("$destroy", function() {
 			document.getElementById("nav-dup").style.backgroundColor="";
 			window.removeEventListener("mousewheel", onMouseWheel);

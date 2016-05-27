@@ -1,11 +1,11 @@
 
 <div>
     <ul class="home-nav">
-        <li class="active"><div></div></li>
-        <li class=""><div></div></li>
-        <li class=""><div></div></li>
-        <li class=""><div></div></li>
-        <li class=""><div></div></li>
+        <li class="active" ng-click="jumToPage(0)"><div></div></li>
+        <li class="" ng-click="jumToPage(1)"><div></div></li>
+        <li class="" ng-click="jumToPage(2)"><div></div></li>
+        <li class="" ng-click="jumToPage(3)"><div></div></li>
+        <li class="" ng-click="jumToPage(4)"><div></div></li>
     </ul>
 </div>
 <div class="home-container" style="transform: translate3d(0px, -0px, 0px);">
@@ -62,7 +62,12 @@
     <img src="src/iPhone.svg" width="500" style="left: 55%; top: 30%; transform: rotate(-15deg);"></img>
     <h1>Read, Not Just <span style="color:#3FA6B5">&lt;</span>Coding<span style="color:#3FA6B5">&gt;</span></h1>
 </div>
-<div class="home-slides-show">
-	<h1>Let's Get Jobs Done!</h1>
+<div class="home-slides-show my-site" style="z-index: 999;">
+    <div style="height: 50%; width: 100%; position: absolute; left:0; top: 0; background-color: #90c9e8;z-index: -1;"></div>
+    <div style="width: 100%; height: 5%; position: absolute; left: 0; top: 45%; background-color: #90c9e8; z-index: -1; background-image: url(src/cloud.svg);" />
+	<h1>Let's get jobs done!</h1>
+    <section>This is the site I built to help me learn more front-end technologies.
+       
+    </section>
 </div>
 </div>

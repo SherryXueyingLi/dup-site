@@ -10,6 +10,7 @@
 .home-nav li{
     list-style: none;
     margin: 5px;
+    cursor: pointer;
 }
 .home-nav li>div{
     width: 15px; 
@@ -99,6 +100,33 @@
     left:37%; 
     top: 40%; 
     padding: 0px;
+}
+
+.my-site ul{
+  list-style: none;
+  padding: 3px;
+}
+.my-site section>ul>li{
+  display: inline-block;
+  width: 28%;
+  padding: 3px;
+  height: 300px;
+  width: 200px;
+  background-color: #fbfbf2;
+  min-width: 150px;
+  border-radius: 8px;
+  border: solid #c1b5b5 1px;
+  margin: 2%;
+  overflow: hidden;
+}
+.my-site section>ul>li>div{
+  font-size: 1.2em;
+}
+.my-site a{
+  text-decoration: none;
+  cursor: pointer;
+  color: black;
+  font-size: 1.1em;
 }
 
 @media screen and (max-width: 520px){
