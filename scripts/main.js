@@ -24,7 +24,7 @@ requirejs.config({
 	}
 });
 
-require(['angular','sidebar', 'uiRouter', 'css!font-awesome.min'], function(angular, sidebar){
+require(['angular','sidebar', 'uiRouter', 'css!style/font-awesome.min'], function(angular, sidebar){
 	var app = angular.module("explorUni", ['ui.router']);
 	
 	app.config(function($controllerProvider, $stateProvider, $urlRouterProvider) {

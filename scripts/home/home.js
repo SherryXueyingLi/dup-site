@@ -72,6 +72,17 @@ define(["css!../home/home"], function(){
 				document.getElementsByClassName("home-slides-show")[0].children[1].classList.remove("animated","fadeInRight");
 				document.getElementsByClassName("home-slides-show")[0].children[2].classList.remove("animated","fadeIn");
 			}
+			if(num === 4){
+				var ul = document.getElementById("sns-to-jump").children;
+				for(var i=0; i<ul.length; i++){
+					ul[i].classList.add( "slideInUp");
+				}
+			}else{
+				var ul = document.getElementById("sns-to-jump").children;
+				for(var i=0; i<ul.length; i++){
+					ul[i].classList.remove( "slideInUp");
+				}
+			}
 		};
 		const fixNavColor = (i) => {
 			var navMap = ["#242543", "#509FCC","#1E2835","#3FA6B5","#90c9e8"];			

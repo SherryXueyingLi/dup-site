@@ -103,25 +103,23 @@
 }
 
 .my-site ul{
+  position: relative;
+  padding: 0px;
   list-style: none;
-  padding: 3px;
+  width: 80%;
 }
-.my-site section>ul>li{
+.my-site ul>li{
   display: inline-block;
-  width: 28%;
-  padding: 3px;
-  height: 300px;
-  width: 200px;
-  background-color: #fbfbf2;
-  min-width: 150px;
-  border-radius: 8px;
-  border: solid #c1b5b5 1px;
-  margin: 2%;
+  padding: 3%;
   overflow: hidden;
 }
-.my-site section>ul>li>div{
-  font-size: 1.2em;
+
+.my-site ul>li img{
+  display: inline-block;
+  width: 120px;
+  overflow: hidden;
 }
+
 .my-site a{
   text-decoration: none;
   cursor: pointer;
@@ -152,7 +150,7 @@
         padding: 1%;
     }
     .hungry-content li img{
-        height:80px; 
+        height: 50px; 
         margin-bottom: 5px;
         padding: 1%;
         
@@ -164,6 +162,12 @@
         color: #E8930F;
         left: 0%;
         text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    }
+    
+    .my-site ul>li img{
+      display: inline-block;
+      width: 80px;
+      overflow: hidden;
     }
 }
 
@@ -402,4 +406,36 @@
   -webkit-animation-name: fadeIn;
   animation-name: fadeIn;
 }
+
+@-webkit-keyframes slideInUp {
+  from {
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.slideInUp {
+  -webkit-animation-name: slideInUp;
+  animation-name: slideInUp;
+}
+
 
