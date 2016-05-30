@@ -1,12 +1,16 @@
 {
-	"name":"dup-site",
-	"version": "0.1",
-	"licence": "MIT",
-	"author":{
-		"name" : "Sherry Li",
-		"email" : "SherryXueying.Li@aliyun.com"
-	},
-    "dependencies": {
-        "express" : "^4.13.4"
-    }
+  "name": "dup-site",
+  "version": "0.1",
+  "licence": "MIT",
+  "author": {
+    "name": "Sherry Li",
+    "email": "SherryXueying.Li@aliyun.com"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-connect": "^1.0.2",
+    "grunt-contrib-jshint": "^2.0.0",
+    "grunt-contrib-uglify": "^1.0.1",
+    "grunt-contrib-watch": "^1.0.0"
+  }
 }

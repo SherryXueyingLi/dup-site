@@ -62,8 +62,8 @@ require(['angular','sidebar', 'uiRouter', 'css!style/font-awesome.min'], functio
                 }]
             },
             controller: name
-	}
-    };
+	};
+    }
     
     function load(name){
 		var deferred = $.Deferred();

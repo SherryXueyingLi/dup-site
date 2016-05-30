@@ -17,12 +17,12 @@ define([], function(){
 		   case right: game.right(); break;
 		   }
 		   if(game.movable()){
-				moved && game.create();
+				if(moved) game.create();
 		   }else{
 				game.lose();
 		   }
 		   scope.$apply();
-		}
+		};
 	};
 	
 	G2048.prototype.init = function(){
@@ -40,7 +40,7 @@ define([], function(){
 				tmp[i] = this.g2048[row][col];
 			}
 			this.score+=mergeRight(tmp);
-			for(var row=0, i=0; row<this.g2048.length; row++, i++){
+			for(row=0, i=0; row<this.g2048.length; row++, i++){
 				this.g2048[row][col] = tmp[i];
 			}
 		}
@@ -53,7 +53,7 @@ define([], function(){
 				tmp[i] = this.g2048[row][col];
 			}
 			this.score+=mergeRight(tmp);
-			for(var row=this.g2048.length-1, i=0; row>=0; row--, i++){
+			for(row=this.g2048.length-1, i=0; row>=0; row--, i++){
 				this.g2048[row][col] = tmp[i];
 			}
 		}
@@ -66,7 +66,7 @@ define([], function(){
 				tmp[i] = this.g2048[row][col];
 			}
 			this.score+=mergeRight(tmp);
-			for(var col=this.g2048.length-1, i=0; col>=0; col--, i++){
+			for(col=this.g2048.length-1, i=0; col>=0; col--, i++){
 				this.g2048[row][col] = tmp[i];
 			}
 		}
@@ -79,7 +79,7 @@ define([], function(){
 				tmp[i] = this.g2048[row][col];
 			}
 			this.score+=mergeRight(tmp);
-			for(var col=0, i=0; col<this.g2048.length; col++, i++){
+			for(col=0, i=0; col<this.g2048.length; col++, i++){
 				this.g2048[row][col] = tmp[i];
 			}
 		}
@@ -107,14 +107,13 @@ define([], function(){
 		
 	G2048.prototype.lose = function(){
 		if(this.score > this.best) this.best = this.score;
-		this.onLost && this.onLost();
+		if(this.onLost) this.onLost();
 	};
 		
 	G2048.prototype.movable = function(){
 		for(var i=0; i<this.g2048.length; i++){
 			for(var j=0; j<this.g2048[i].length; j++){
-				if((j<this.g2048[i].length-1 && rightMoveable(this.g2048, i, j))
-					|| ( i<this.g2048.length-1 && downMoveable(this.g2048, i, j)))
+				if((j<this.g2048[i].length-1 && rightMoveable(this.g2048, i, j)) || ( i<this.g2048.length-1 && downMoveable(this.g2048, i, j)))
 					return true;
 			}
 		}
@@ -127,7 +126,7 @@ define([], function(){
 	};
 	
 	var downMoveable = function(array, i, j){
-		var x=i+1
+		var x=i+1;
 		return (array[x][j] ===0 || array[x][j]===array[i][j]);
 	};
 	
@@ -164,14 +163,14 @@ define([], function(){
 				while(j>0 && array[j]===0){
 					j--;
 				}
-				if(j>=0 && array[j]!=0){
+				if(j>=0 && array[j]!==0){
 					array[i] = array[j];
 					array[j] = 0;
 					moved = true;
 				}
 			}
 		}
-	}
+	};
 	
 	return G2048;
 });

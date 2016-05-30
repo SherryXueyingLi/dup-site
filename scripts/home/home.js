@@ -33,7 +33,7 @@ define(["css!../home/home"], function(){
 			
 			document.getElementsByClassName("home-slides-show")[toPageNum].classList.add("current");
 			document.getElementsByClassName("home-nav")[0].children[toPageNum].classList.add("active");
-			setTimeout( ()=>{pageAnimate(toPageNum)}, 400);
+			setTimeout( ()=>{pageAnimate(toPageNum);}, 400);
 			fixNavColor(toPageNum);
 		};
 		const pageAnimate = (num)=>{
@@ -72,16 +72,10 @@ define(["css!../home/home"], function(){
 				document.getElementsByClassName("home-slides-show")[0].children[1].classList.remove("animated","fadeInRight");
 				document.getElementsByClassName("home-slides-show")[0].children[2].classList.remove("animated","fadeIn");
 			}
-			if(num === 4){
-				var ul = document.getElementById("sns-to-jump").children;
-				for(var i=0; i<ul.length; i++){
-					ul[i].classList.add( "slideInUp");
-				}
-			}else{
-				var ul = document.getElementById("sns-to-jump").children;
-				for(var i=0; i<ul.length; i++){
-					ul[i].classList.remove( "slideInUp");
-				}
+			var snses = document.getElementById("sns-to-jump").children;
+			var func = num === 4? 'add' : 'remove';
+			for(var i=0; i<snses.length; i++){
+					snses[i].classList[func]( "slideInUp");
 			}
 		};
 		const fixNavColor = (i) => {
@@ -92,17 +86,17 @@ define(["css!../home/home"], function(){
 		
 		
 		const next = (currentIndex, max)=>{
-			return  n = (currentIndex === max)? 0 : currentIndex+1;		
+			return  currentIndex === max ? 0 : currentIndex+1;		
 		};
 		const previous = (currentIndex, max) => {			
-			return n = currentIndex ===  0 ? max : currentIndex-1;
+			return currentIndex ===  0 ? max : currentIndex-1;
 		};
 		
 		var underProcess = false;
 		const onMouseWheel = (e) => {
 			if(underProcess) return;
 			underProcess=true;
-			e.wheelDelta < 0 ? movePageTo(next) : movePageTo(previous);
+			if( e.wheelDelta < 0 ) movePageTo(next); else movePageTo(previous);
 			fixNavColor();
 			setTimeout(()=>{underProcess=false;}, 500);
 		};

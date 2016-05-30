@@ -9,9 +9,9 @@ define(["../g2048/2048", "css!../g2048/g2048"], function(G2048){
 		};
 		$scope.reset2048 = function(){
 			$scope.g2048.init();
-		}
+		};
 		
 	
 	};
 	return ctl;
-})
+});
