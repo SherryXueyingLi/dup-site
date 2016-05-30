@@ -2,7 +2,7 @@ define(["css!../home/home"], function(){
 	var ctl = function($scope, $element){
 		
 		document.body.style.overflow="hidden";
-		
+		window.scrollTo(0, 0);
 		let resize = function(){
 			var slides = document.getElementsByClassName("home-slides-show");
 			for(var i=0; i<slides.length; i++){
