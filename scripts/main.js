@@ -5,12 +5,18 @@ requirejs.config({
 	   "uiRouter": "lib/angular-ui-router",
 	   "sidebar": "scripts/sideBarController",
        "particles": "lib/particles.min",
-       "react": "lib/react.min",
-       "react-dom": "lib/react-dom.min"
+       "react": "lib/react",
+       "react-dom": "lib/react-dom"
     },
 	shim: {
         'angular': {
             exports: 'angular'
+        },
+        'react': {
+            exports: 'React'
+        },
+        'react-dom': {
+            exports: 'ReactDOM'
         },
 		"uiRouter": ["angular"],
         "particles": {
@@ -42,7 +48,8 @@ require(['angular','sidebar', 'uiRouter', 'css!style/font-awesome.min'], functio
 		.state('blogs', generateConfig('blogs'))
 		.state('journal', generateConfig('journal'))
 		.state('github', generateConfig('github'))
-		.state('cv', generateConfig('cv'));
+		.state('cv', generateConfig('cv'))
+        .state('succulent', generateConfig('succulent'));
 	
     };
     

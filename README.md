@@ -21,3 +21,13 @@ angular, bootstrap, particles(a awesome plugin) ...
 More mini games.
 
 SNS -> I don't know what it is going tobe.
+
+# Start 
+
+if run in local, use following command.
+
+    npm install
+
+    grunt server
+
+then open localhost:8081
