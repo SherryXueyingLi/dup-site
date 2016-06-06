@@ -86,10 +86,10 @@ define(["css!../home/home"], function(){
 		
 		
 		const next = (currentIndex, max)=>{
-			return  currentIndex === max ? 0 : currentIndex+1;		
+			return  currentIndex === max ? max : currentIndex+1;		
 		};
 		const previous = (currentIndex, max) => {			
-			return currentIndex ===  0 ? max : currentIndex-1;
+			return currentIndex ===  0 ? 0 : currentIndex-1;
 		};
 		
 		var underProcess = false;

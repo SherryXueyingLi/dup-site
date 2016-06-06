@@ -25,3 +25,10 @@
 	border-radius: 150px;
     background-color: transparent;
 }
+#sns-in-cv li{
+	display: inline-block;
+	margin: 20px;
+}
+#sns-in-cv li a{
+	color: #3387e0;
+}
