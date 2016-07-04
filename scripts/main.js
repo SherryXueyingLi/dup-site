@@ -3,6 +3,7 @@ requirejs.config({
     paths: {
        "angular": "lib/angular",
 	   "uiRouter": "lib/angular-ui-router",
+       "ngCookies": "lib/angular-cookies",
 	   "sidebar": "scripts/sideBarController",
        "particles": "lib/particles.min",
        "react": "lib/react",
@@ -11,14 +12,9 @@ requirejs.config({
 	shim: {
         'angular': {
             exports: 'angular'
-        },
-        'react': {
-            exports: 'React'
-        },
-        'react-dom': {
-            exports: 'ReactDOM'
-        },
+        },      
 		"uiRouter": ["angular"],
+        "ngCookies": ["angular"],
         "particles": {
             exports: 'particlesJS'
         }
@@ -30,8 +26,8 @@ requirejs.config({
 	}
 });
 
-require(['angular','sidebar', 'uiRouter', 'css!style/font-awesome.min'], function(angular, sidebar){
-	var app = angular.module("explorUni", ['ui.router']);
+require(['angular','sidebar', 'uiRouter', 'ngCookies', 'css!style/font-awesome.min'], function(angular, sidebar){
+	var app = angular.module("explorUni", ['ui.router','ngCookies']);
 	
 	app.config(function($controllerProvider, $stateProvider, $urlRouterProvider) {
 		app.cp = $controllerProvider;
@@ -45,7 +41,7 @@ require(['angular','sidebar', 'uiRouter', 'css!style/font-awesome.min'], functio
     var setStates = function($stateProvider){
 		$stateProvider.state('sns', generateConfig('sns')).state('home', generateConfig('home'))
         .state('g2048', generateConfig('g2048'))
-		.state('blogs', generateConfig('blogs'))
+		.state('weather', generateConfig('weather'))
 		.state('journal', generateConfig('journal'))
 		.state('github', generateConfig('github'))
 		.state('cv', generateConfig('cv'))
