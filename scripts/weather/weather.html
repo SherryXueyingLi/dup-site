@@ -12,24 +12,24 @@
 </div>
 
 <div class="container" ng-if="cities">
-     <div class="col-md-4 col-offset-4" ng-show="loading" align="center"><i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+     <div class="col-md-4 col-offset-4" ng-if="loading" align="center"><i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
             <span class="sr-only">Loading...</span>
      </div> 
      <div class="col-md-2" ng-repeat=" city in cities">   
-            <div class="btn btn-link" ng-click="getWeather(city.lat, city.lon)">{{city.name}}</div>
+            <div class="btn btn-link" ng-click="chooseCity(city.lat, city.lon)">{{city.name}}</div>
      </div>
 </div>
 
 <div class="container" ng-if="weather.channel" style="color:white;">
-    <div class="col-md-4" ng-show="loadingWeather"><i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
-            <span class="sr-only">Loading...</span>
-    </div>
+    
     <div class="row">
         <div class="col-md-12 " style="font-size: 1em;">
              <span class="glyphicon glyphicon-map-marker" aria-hidden="true"> {{weather.channel.location.city}}  {{weather.channel.location.country}}</span>
          </div>
         <div class="col-md-3 " style="font-size: 7em;">{{weather.channel.item.condition.temp}} <i class="wi wi-celsius"></i></div>
-        
+        <div class="col-md-4" ng-if="loadingWeather" style=" margin-top: 3%; color: rgba(88, 139, 218, 0.54);"><i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+            <span class="sr-only">Loading...</span>
+        </div>
     </div>
     <div class="row" style="font-size: 2em;" align="center">
         <div class="col-md-3">
