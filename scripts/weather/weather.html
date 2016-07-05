@@ -1,4 +1,5 @@
 
+<div style="color: white">
 <div class="container" style="margin-top: 30px;">
 <div class="col-md-4 form-group">
   <div class="input-group">  
@@ -10,40 +11,81 @@
 </div>
 </div>
 
-<div class="container-fluid">
-    <div class="col-md-4" ng-show="loading"><i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+<div class="container" ng-if="cities">
+     <div class="col-md-4 col-offset-4" ng-show="loading" align="center"><i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
             <span class="sr-only">Loading...</span>
-    </div>
-    <div class="col-md-4" ng-repeat=" city in cities">
-         
-         <div class="btn btn-link" ng-click="getWeather(city.lat, city.lon)">{{city.name}}</div>
-    </div>
+     </div> 
+     <div class="col-md-2" ng-repeat=" city in cities">   
+            <div class="btn btn-link" ng-click="getWeather(city.lat, city.lon)">{{city.name}}</div>
+     </div>
 </div>
 
-<div class="container" ng-if="weather.channel">
+<div class="container" ng-if="weather.channel" style="color:white;">
     <div class="col-md-4" ng-show="loadingWeather"><i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
             <span class="sr-only">Loading...</span>
     </div>
     <div class="row">
-        <span class="glyphicon glyphicon-map-marker" aria-hidden="true"> City:  {{weather.channel.location.city}}  {{weather.channel.location.country}}</span>
+        <div class="col-md-12 " style="font-size: 1em;">
+             <span class="glyphicon glyphicon-map-marker" aria-hidden="true"> {{weather.channel.location.city}}  {{weather.channel.location.country}}</span>
+         </div>
+        <div class="col-md-3 " style="font-size: 7em;">{{weather.channel.item.condition.temp}} <i class="wi wi-celsius"></i></div>
+        
     </div>
-    <div class="row">
-    <div><i class="wi wi-sunrise"></i>sunrise: {{weather.channel.astronomy.sunrise}}</div>
-    <div><i class="wi wi-sunset"></i>sunset: {{weather.channel.astronomy.sunset}}</div>
-    <div><i class="wi wi-humidity"></i>humidity: {{weather.channel.atmosphere.humidity}}</div>
-    <div><i class="wi wi-barometer"></i>pressire: {{weather.channel.atmosphere.pressure}}</div>
-    <div><i class="wi wi-flood"></i>rising: {{weather.channel.atmosphere.rising}}</div>
-    <div><i class="wi wi-train"></i>visibility: {{weather.channel.atmosphere.visibility}}</div>
-    </div>
-    <div class="row">
-        <div>Weather: <i ng-class="getClass(weather.channel.item.condition.code)"></i> {{weather.channel.item.condition.text}}</div>
-        <div>Temperature: {{weather.channel.item.condition.temp}} <i class="wi wi-celsius"></i></div>
+    <div class="row" style="font-size: 2em;" align="center">
+        <div class="col-md-3">
+            <i ng-class="getClass(weather.channel.item.condition.code)"></i>
+            <span style="font-size: 0.5em;">{{weather.channel.item.condition.text}}</span>
+        </div>
+        <div class="col-md-3">            
+            <span style="font-size: 0.5em;"><i class="wi wi-sunrise"></i> Sunrise</span> {{weather.channel.astronomy.sunrise}}
+        </div>
+        <div class="col-md-3">       
+            <span style="font-size: 0.5em;"><i class="wi wi-sunset"></i>Sunset</span> {{weather.channel.astronomy.sunset}}
+        </div>
+        <div class="col-md-3">
+            
+            <span style="font-size: 0.5em;"><i class="wi wi-humidity"></i>Humidity</span> {{weather.channel.atmosphere.humidity}}
+        </div>
+        <div class="col-md-3"> 
+             <span style="font-size: 0.5em;"><i class="wi wi-barometer"></i>Pressure</span> {{weather.channel.atmosphere.pressure}} {{weather.channel.units.pressure}}
+        </div>
+        <div class="col-md-3">   
+            <span style="font-size: 0.5em;"><i class="wi wi-flood"></i>Rising</span> {{weather.channel.atmosphere.rising}}
+        </div>
+        <div class="col-md-3"> 
+            <span style="font-size: 0.5em;"><i class="wi wi-train"></i>Visibility</span> {{weather.channel.atmosphere.visibility}}
+        </div>
+        <div class="col-md-3">     
+            <span style="font-size: 0.5em;"><i class="wi wi-strong-wind"></i>Wind</span> {{weather.channel.wind.speed}} {{weather.channel.units.speed}}
+        </div>
        
+    </div>
+    <div class="row">
+        
+        <div class="col-md-3" ng-repeat="forecast in weather.channel.item.forecast" align="center" >
+            <div style="background-color: rgba(31, 36, 95, 0.73); margin: 3%; border-radius: 5px;">
+                <div>{{forecast.day}}</div>
+                <div>{{forecast.date}}</div>
+                <div style="font-size: 3em;">
+                    <i ng-class="getClass(forecast.code)"></i>
+                
+                </div>
+                <div style="">{{forecast.text}}</div>
+                <div style="">{{forecast.low}}/{{forecast.high}}</div>
+            </div>
+        </div>
+        
+        <div class="col-md-12" style="font-size: 0.8em;">
+	        Publish: {{weather.channel.item.pubDate}}   
+        </div>
     </div>
    
 
 </div>
-<footer class="row" align="center">
-        <img ng-src="{{weather.channel.image.url}}">
-        <label>icon@http://weathericons.io.</label>
+<div id="bgforweather" style="background-image:url(src/star.jpg); color: white; position: fixed; top: 0px;width: 100%; z-index: -999;background-size: cover;">
+</div>
+</div>
+<footer class="row" align="center" style="position: fixed; top: 95%; height: 5%; width: 100%; background-color: transparent;">
+        <label  class="label label-primary">{{weather.channel.image.title}}</label>
+        <label  class="label label-primary">icon@http://weathericons.io.</label>
 </footer>

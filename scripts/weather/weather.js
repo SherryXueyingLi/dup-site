@@ -7,6 +7,9 @@ define(["css!../../style/weather-icons.min"], function(){
         $scope.query = function(){
             getLocation($scope.location);
         };
+
+        let bg = document.getElementById("bgforweather");
+        bg.style.height = window.innerHeight + "px";
        
         $scope.getWeather = function(lat, lng){
              $scope.loadingWeather = true;
@@ -21,6 +24,7 @@ define(["css!../../style/weather-icons.min"], function(){
 
             $http(req).then(function(data){
                 $scope.weather = data.data.query.results;
+                $scope.cities = null;
                 let s = JSON.stringify($scope.weather);
                 $cookies.put("dupsiteweatherlat", lat);
                 $cookies.put("dupsiteweatherlng", lng);
